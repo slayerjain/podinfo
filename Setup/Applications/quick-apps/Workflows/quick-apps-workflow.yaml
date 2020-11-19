@@ -45,8 +45,13 @@ phases:
     - type: K8S_DELETE
       name: Canary Delete
       properties:
+        deleteNamespacesForRelease: false
         instanceUnitType: COUNT
         resources: ${k8s.canaryWorkload}
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: quick-apps
